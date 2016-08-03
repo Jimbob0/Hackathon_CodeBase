@@ -3,4 +3,5 @@ postSchema ={
     title: String,
     body: String,
     date: Number
-}
+};
+module.exports = userSchema;
