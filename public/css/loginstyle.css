@@ -1,0 +1,98 @@
+@font-face {
+    font-family: "pokemon";
+    src: url("../fonts/Pokemon_Solid.ttf");
+}
+.page-header{
+    height: 75px;
+    border: 1px solid black;
+    display: inline-flex;
+    width: 100%;
+}
+#page_header{
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-image: url('../img/header1.jpg');
+    background-size: contain;
+}
+.head-right-wrapper{
+    margin-left: auto;
+}
+.head-right{
+    height: 75px;
+    width: 75px;
+    float: right;
+    border-left: 1px solid black;
+    padding: 10px;
+    padding-top: 20px;
+    background-image: url('../img/pokeball.png');
+    background-size: cover;
+    font-family: "pokemon";
+    text-shadow: 2px 1px 1px #0099ff, -2px -1px 1px #0099ff;
+    color: #ffcc00;
+    text-align: center;
+    font-size: 15pt;
+}
+.head-right:hover{
+    background-image: url('../img/openpokeball.png');
+    background-size: cover;
+}
+.head-left-wrapper{
+    margin: auto 0;
+}
+.head-left{
+    font-family: "pokemon";
+    text-shadow: 2px 1px 1px #0099ff, -2px -1px 1px #0099ff;
+    color: #ffcc00;
+    margin-top: 5px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+.head-left h1{
+    font-family: "pokemon";
+    margin: 0;
+}
+body{
+    height: 600px;
+    background-image: url('../img/pikabg.jpg');
+    background-size: 100% 600px;
+    background-repeat: no-repeat;
+}
+.login{
+    position: relative;
+    top: 40%;
+    left: 50%;
+    margin: -150px 0 0 -150px;
+    width: 300px;
+    height: 300px;
+}
+.login h1 {
+    font-family: "pokemon";
+    text-shadow: 2px 1px 1px #0099ff, -2px -1px 1px #0099ff;
+    color: #ffcc00;
+    text-align: center;
+    font-size: 34pt;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+input {
+    width: 100%;
+    background: rgba(0,0,0,0.3);
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 13px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 4px;
+	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+}
+input#username, input#password {
+    margin-bottom: 10px;
+}
+input#submit, input#register{
+    width: 50%;
+    float: left;
+}
