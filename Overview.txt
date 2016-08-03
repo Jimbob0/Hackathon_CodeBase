@@ -1,0 +1,40 @@
+Function:
+    View all posts on home page in viewer
+    Login to creat and vote
+    Create new post with a title and contents
+    have a voting system on the hompage
+    save users and posts
+Style:
+- Login Page (Done?)
+    - basic login
+    - username/password
+    - login button
+    - maybe create new user, but might leave that up to the admin
+        - create new user, but leave for admin approval
+    - browse without login
+- Main Page (Henry)
+    - Reddit style layout
+    - Title across the top
+    - post titles listed down the left side
+        - title will be followed by info about the post.
+        - author
+        - post date / time
+        - ratings at the far right of the title bar
+            - clickable check box
+            - clickable x box
+            - clickable report box
+                - reports will be sent to the admin
+    - takes up 2/3 of the screen 
+    - display box on the left
+        - takes up 1/3 of the screen
+        - will display the posts upon click of the title
+- Create New Post (Stephen)
+    - Title input box
+        - will become a link
+    - main input box
+        - possibly find a template for an input box
+        - possibly with formatting
+        - post button
+        - cancel button
+
+

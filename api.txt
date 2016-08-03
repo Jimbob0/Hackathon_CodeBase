@@ -1,0 +1,17 @@
+GET /index.html
+
+GET /posts
+
+GET /votes
+
+POST /votes
+	needs login
+
+POST /posts
+	needs login
+
+GET /login
+
+POST /login
+
+POST /logout
