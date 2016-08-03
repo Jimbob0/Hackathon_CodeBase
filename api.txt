@@ -1,4 +1,4 @@
-GET /index.html
+Done GET /index.html
 
 GET /posts
 
@@ -10,8 +10,8 @@ POST /votes
 POST /posts
 	needs login
 
-GET /login
+Done GET /login
 
-POST /login
+Done POST /login
 
-POST /logout
+Done POST /logout
