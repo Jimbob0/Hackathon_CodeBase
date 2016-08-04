@@ -2,9 +2,6 @@
 	font-family: 'penn';
 	src: url("../fonts/Pennstat.ttf");
 }
-#water {
-	color: black;
-}
 .water{
 	background-image: url(../img/underwater-header.jpg);
 	background-size: cover;
