@@ -23,6 +23,9 @@
 .navbar-default .navbar-brand {
     color: black;
 }
+.navbar-default .navbar-brand:hover {
+	color: black;
+}
 
 .navbar-default .navbar-nav>li>a {
     color: black;
@@ -72,7 +75,7 @@
 	padding-top: -30px;
 	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.5), 0 1px 1px rgba(255,255,255,0.5);
 	border-radius: 4px;
-	opacity: .95;
+	opacity: .9;
 }
 
 .col-md-4 {
@@ -94,6 +97,7 @@ body {
 }
 .list-group-item {
 	padding-bottom: 30px;
+	opacity: .9;
 }
 #contain {
 	padding-top: 20px;
@@ -105,6 +109,6 @@ body {
 	padding-bottom: 0;
 
 }
-
+/* Start http://www.cursors-4u.com */ body, a:hover {cursor: url(http://cur.cursors-4u.net/nature/nat-7/nat630.cur), progress !important;} /* End http://www.cursors-4u.com */
 
 
