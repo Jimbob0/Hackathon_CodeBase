@@ -5,6 +5,56 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	
 	<link rel="stylesheet" type="text/css" href="./css/homestyle.css">
+
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+
+	<script>
+		//show all of the titles and votes for each post, mockup without db implementation NEEDS UPDATE
+		function showPosts(){
+			$.get("/posts",function(data){
+				$('#post_list').html("");
+				for(var i = 0; i < data.length; i++){
+					$('#post_list').append("<li class='list-group-item'><a id='title"+ data._id +"'>"+data.title+'</a><button class="check" id="post+'data._id'">Like'+data.votes+'</button></li>');
+				}
+			});
+		};
+		//show the answer of the selected title 
+		function showAns(id){
+			$.get("/posts",function(data){
+				var answer = data.find(
+					{_id: id}, 
+					{body: 1},
+					function(err, data){
+						if (err){
+	 						return handleError(err);
+						};
+						return (data);
+	 				}
+				);
+				$('#ans').html(answer); 
+				}
+			});
+		};
+
+		//mockup without db implementation NEEDS UPDATE
+		function upVote(id){ 
+			$.post("/posts", function(data){
+				data.findOneAndUpdate({_id: id}, {
+					$inc: {votes: 1}
+				});
+			})
+		}
+
+		//mockup without db implementation NEEDS UPDATE
+		$(document).ready(function(){
+			showPosts();
+			$("#title"+id).click(showAns(id));
+			$("#post"+id).click(upVote(id));
+			$("#post"+id).click(showPosts);
+		});
+
+
+	</script>
 </head>
 <body>
 	<nav class="navbar navbar-default water" id="water" style="margin-bottom: 0px">
