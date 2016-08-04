@@ -2,6 +2,31 @@
 	font-family: 'penn';
 	src: url("../fonts/Pennstat.ttf");
 }
+#water {
+	color: black;
+}
+.water{
+	background-image: url(../img/underwater-header.jpg);
+	background-size: cover;
+	font-size: 15pt;
+	color:black !important;
+	/*padding-top: 25px;*/
+	border: 0;
+}
+.navbar-brand {
+	font-family: penn;
+	border-right: 1px solid black;
+	font-size: 30px;
+	color:black;
+}
+
+.navbar-default .navbar-brand {
+    color: black;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: black;
+}
 
 .title {
 	text-align: center;
@@ -9,15 +34,17 @@
 	font-family: penn;
 	margin-top: 0px;
 	padding: 20px;
+	font-size: 100px;
 
 }
 .titletab {
 	text-align: center;
 	width: 100%;
 	font-family: penn;
-	margin-top: 0px;
-	padding: 20px;
+	/*margin-top: 0px;*/
+	/*padding: 20px;*/
 	border-left: 1px solid black;
+	color: black;
 
 }
 .titledesc {
@@ -36,7 +63,6 @@
 #posts {
 	padding-bottom: 300px;
 	border: 1px solid black;
-	color
 }
 
 #ans {
@@ -44,6 +70,9 @@
 	border: 1px solid black;
 	background-color: white;
 	padding-top: -30px;
+	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.5), 0 1px 1px rgba(255,255,255,0.5);
+	border-radius: 4px;
+	opacity: .95;
 }
 
 .col-md-4 {
@@ -53,6 +82,7 @@
 body {
 	background-image: url(../img/submarinebase.jpeg);
 	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .check {
@@ -75,9 +105,6 @@ body {
 	padding-bottom: 0;
 
 }
-.water{
-	background-image: url(../img/underwater-header.jpg);
-	background-size: cover;
-}
+
 
 
