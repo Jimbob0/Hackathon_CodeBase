@@ -22,6 +22,7 @@ var mongoose = require("mongoose");
 mongoose.connect('mongodb://localhost');
 
 var UserFtns = require("./UserFtns.js");
+var Schema = mongoose.Schema;
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -40,6 +41,37 @@ app.use(session({
 app.use(function(req, res, next) {
 	console.log(req.url);
 	next();
+});
+// Schema
+var postSchema = new Schema({
+	title: String,
+	body: String,
+	date: { type: Date, default: Date.now },
+	votes: Number,
+	user: String
+});
+var post = mongoose.model('post', postSchema);
+// Upload from the new_page inputs
+app.post('/posts', function(req,res){
+	var content = new post(
+		{title: req.body.titleStr},
+		{body: req.body.bodyStr},
+		{votes: 0},
+		{date: Date.now},
+		{user: req.session.user});
+	content.save(function(err){
+        if(err){
+            return handleError(err);
+        } else {
+            res.send('Post Uploaded');
+        }
+    });
+});
+// Display posts by date on the index page
+app.get('/posts',function(req,res){
+	post.find(function(err, data){
+		res.send(data);
+	});
 });
 
 // if we want to respond to GET requests for "/"
