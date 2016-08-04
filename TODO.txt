@@ -1,5 +1,5 @@
 ---------- REQUIREMENTS ----------
-restyle the login page-header to be a navbar
+DONE restyle the login page-header to be a navbar
 get the other pages completed
 DONE get the users working
 DONE setup registration
