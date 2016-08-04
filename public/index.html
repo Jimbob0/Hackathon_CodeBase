@@ -32,11 +32,9 @@
 	 				}
 				);
 				$('#ans').html(answer); 
-				}
 			});
 		};
 
-		//mockup without db implementation NEEDS UPDATE
 		function upVote(id){ 
 			$.post("/posts", function(data){
 				data.findOneAndUpdate({_id: id}, {
