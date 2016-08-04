@@ -9,6 +9,7 @@
 	color:black !important;
 	/*padding-top: 25px;*/
 	border: 0;
+    box-shadow: 0 0 30px blue;
 }
 .navbar-brand {
 	font-family: penn;
