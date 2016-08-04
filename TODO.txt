@@ -17,7 +17,7 @@ get real votes to work
 setup a report button
 setup database for persistent storage
 CREATE NEW PAGE
-new post javascript to set title str & body str to the matching fields
+DONE new post javascript to set title str & body str to the matching fields
 be able to put new posts in the database
 
 ---------- EXTRAS ----------
