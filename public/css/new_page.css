@@ -16,11 +16,13 @@ body{
 	color:black !important;
 	/*padding-top: 25px;*/
 	border: 0;
+	box-shadow: 0 0 30px blue;
 }
 
 .navbar-brand{
 	font-family: penn;
 	font-size: 20px;
+
 }
 .titletab{
 	font-family: penn;
@@ -31,6 +33,7 @@ body{
 	font-size: 80px;
 	text-shadow: 3px 3px #B3D4E0;
 	border: 0;
+
 }
 #sizing-addon1{
 	font-family:penn;
@@ -46,7 +49,10 @@ body{
 	margin:0 auto;
 	width: 500px;
 }
+.wysiwyg{
+	opacity: 0.5;
 
+}
 #submitbtn{
 
 	float: right;
