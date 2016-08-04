@@ -9,11 +9,32 @@ body{
     font-family: 'penn';
     src: url("../fonts/Pennstat.ttf");
 }
+.water{
+	background-image: url(../img/underwater-header.jpg);
+	background-size: cover;
+	font-size: 15pt;
+	color:black !important;
+	/*padding-top: 25px;*/
+	border: 0;
+}
+
+.navbar-brand{
+	font-family: penn;
+	font-size: 20px;
+}
+.titletab{
+	font-family: penn;
+	font-size: 20px;
+}
 .page-header {
 	font-family: penn;
 	font-size: 80px;
 	text-shadow: 3px 3px #B3D4E0;
 	border: 0;
+}
+#sizing-addon1{
+	font-family:penn;
+	font-size: 15px;
 }
 
 #code-input{
@@ -26,7 +47,8 @@ body{
 	width: 500px;
 }
 
-.submitbtn{
+#submitbtn{
+
 	float: right;
 	border: 2px solid black;
 	box-shadow: 1px 1px 1px 1px;
