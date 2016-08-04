@@ -1,6 +1,59 @@
-.tite {
-	text-align: center;
+@font-face{
+	font-family: 'penn';
+	src: url("../fonts/Pennstat.ttf");
 }
-.titedesc {
+
+.title {
 	text-align: center;
+	width: 100%;
+	font-family: penn;
+	margin-top: 0px;
+	padding: 20px;
+
 }
+.titledesc {
+	text-align: center;
+<<<<<<< Updated upstream
+}
+=======
+	font-family: Verdana;
+}
+#posts {
+	padding-bottom: 300px;
+	border: 1px solid black;
+	
+}
+
+#ans {
+	padding-bottom: 300px;
+	border: 1px solid black;
+	background-color: white;
+	padding-top: -30px;
+}
+
+.col-md-4 {
+	padding-top: 20px;
+}
+
+.back {
+	background-image: url(../img/underwater.jpeg);
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+}
+
+.check {
+	float: right;
+}
+
+.ex {
+	float: right;
+}
+.list-group-item {
+	padding-bottom: 30px;
+}
+#contain {
+	padding-top: 20px;
+}
+
+>>>>>>> Stashed changes
