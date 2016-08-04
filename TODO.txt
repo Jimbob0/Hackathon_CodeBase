@@ -1,0 +1,31 @@
+---------- REQUIREMENTS ----------
+restyle the login page-header to be a navbar
+get the other pages completed
+DONE get the users working
+DONE setup registration
+get everything interconnected (hrefs working)
+set up the server and make sure the basics are still responsive
+get a dummy post to show
+    the title and the output
+get the post submittal working
+    POST /posts
+    maybe create a "post successfully created page?"
+get a real post to show
+    GET /posts
+get dummy votes to work
+get real votes to work
+    GET /votes
+setup a report button
+setup database for persistent storage
+
+
+---------- EXTRAS ----------
+setup on page load animations
+setup tags for easy finding
+setup a search engine
+setup an admin page
+    ability to delete reported posts
+    ability to remove reported users
+report user function
+setup a user page
+setup a way to save posts to the user page
