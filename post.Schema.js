@@ -4,4 +4,4 @@ postSchema ={
     body: String,
     date: Number
 };
-module.exports = userSchema;
+module.exports = postSchema;

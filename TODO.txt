@@ -1,8 +1,8 @@
 ---------- REQUIREMENTS ----------
 restyle the login page-header to be a navbar
 get the other pages completed
-get the users working
-setup registration
+DONE get the users working
+DONE setup registration
 get everything interconnected (hrefs working)
 set up the server and make sure the basics are still responsive
 get a dummy post to show
