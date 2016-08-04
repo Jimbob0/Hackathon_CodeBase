@@ -1,0 +1,38 @@
+
+body{
+	background-image: url("../img/new_page_bg.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+
+}
+@font-face{
+    font-family: 'penn';
+    src: url("../fonts/Pennstat.ttf");
+}
+.page-header {
+	font-family: penn;
+	font-size: 80px;
+	text-shadow: 3px 3px #B3D4E0;
+	border: 0;
+}
+
+#code-input{
+	width: 500px;
+	height: 500px;
+}
+
+.form-group{
+	margin:0 auto;
+	width: 500px;
+}
+
+.submitbtn{
+	float: right;
+	border: 2px solid black;
+	box-shadow: 1px 1px 1px 1px;
+}
+#summernote{
+	border: 2px solid black;
+	opacity: 0.3;
+    filter: alpha(opacity=30);
+}
