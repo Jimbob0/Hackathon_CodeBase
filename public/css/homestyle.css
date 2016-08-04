@@ -11,8 +11,23 @@
 	padding: 20px;
 
 }
+.titletab {
+	text-align: center;
+	width: 100%;
+	font-family: penn;
+	margin-top: 0px;
+	padding: 20px;
+	border-left: 1px solid black;
+
+}
 .titledesc {
 	text-align: center;
+	font-family: penn;
+	padding-top: 10px;
+	/*color: white*/
+	opacity: .7;
+    filter: alpha(opacity=20);
+	;
 <<<<<<< Updated upstream
 }
 =======
@@ -36,7 +51,7 @@
 }
 
 body {
-	background-image: url(../img/underwater.jpeg);
+	background-image: url(../img/submarinebase.jpeg);
 	background-size: cover;
 }
 
@@ -60,5 +75,9 @@ body {
 	padding-bottom: 0;
 
 }
+.water{
+	background-image: url(../img/underwater-header.jpg);
+	background-size: cover;
+}
 
->>>>>>> Stashed changes
+
