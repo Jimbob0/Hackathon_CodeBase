@@ -79,18 +79,23 @@ $('#summernote').summernote({
 </script>
 <script>
 function sendInputs(){
+    console.log("about to post",$("#title").val(),$("#summernote").val());
 	$.post( "/posts", {
 		titleStr: $("#title").val(),
 		bodyStr: $("#summernote").val()
 	},function(data){
-		if(data == success){
+		if(data == 'success'){
 			alert("post uploaded!");
 		}
 	});
 }
 
 $(document).ready(function(){
-	$("#submitbtn").click(sendInputs);
+    console.log('document ready');
+    $("#submitbtn").click(function(){
+        debugger;
+        sendInputs();
+    });
 });
 
 </script>
