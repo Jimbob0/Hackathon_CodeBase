@@ -6,7 +6,7 @@
 	background-image: url(../img/underwater-header.jpg);
 	background-size: cover;
 	font-size: 15pt;
-	color:black !important;
+	color:#333;
 	/*padding-top: 25px;*/
 	border: 0;
     box-shadow: 0 0 30px blue;
@@ -15,18 +15,18 @@
 	font-family: penn;
 	border-right: 1px solid black;
 	font-size: 30px;
-	color:black;
+	color:#333;
 }
 
 .navbar-default .navbar-brand {
-    color: black;
+    color: #333;
 }
 .navbar-default .navbar-brand:hover {
 	color: black;
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: black;
+    color: #333;
 }
 
 .title {

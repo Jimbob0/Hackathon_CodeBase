@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>New Post Page</title>
+        
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
@@ -69,31 +70,38 @@
 	<!-- our js links -->
 
 <script>
-$('#summernote').summernote({
-  height: 300,                 // set editor height
-  minHeight: null,             // set minimum height of editor
-  maxHeight: null,
-               // set maximum height of editor
-  focus: true              // set focus to editable area after initializing summernote
-});	
+$('#summernote').summernote(
+    {
+      height: 300, 
+      minHeight: null,
+      maxHeight: null,
+      focus: true,
+    toolbar: [
+        ['style', ['bold', 'italic', 'underline', 'clear']],
+        ['insert',['hr']],
+        ['color', ['color']],
+        ['para', ['ol', 'ul']],
+        ['misc', ['fullscreen', 'codeview', 'undo', 'redo',]]
+    ]
+    // if we can make it work, a help button that says 'call Erty'
+    }
+);	
 </script>
 <script>
 function sendInputs(){
-    console.log("about to post",$("#title").val(),$("#summernote").val());
 	$.post( "/posts", {
 		titleStr: $("#title").val(),
-		bodyStr: $("#summernote").val()
+		bodyStr: $("#summernote").summernote('code')
 	},function(data){
 		if(data == 'success'){
-			alert("post uploaded!");
 		}
 	});
 }
 
 $(document).ready(function(){
     console.log('document ready');
-    $("#submitbtn").click(function(){
-        debugger;
+    $("#submitbtn").click(function(evt){
+        evt.preventDefault();
         sendInputs();
     });
 });

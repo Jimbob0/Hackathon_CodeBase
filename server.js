@@ -29,7 +29,7 @@ app.use(function(req, res, next) {
 var postSchema = new Schema({
 	title: String,
 	body: String,
-	date: { type: Date, default: Date.now },
+	date: Number,
 	votes: Number,
 	user: String
 });
@@ -37,14 +37,15 @@ var post = mongoose.model('post', postSchema);
 // Upload from the new_page inputs
 app.post('/posts', function(req,res){
 	var content = new post(
-		{title: req.body.titleStr},
-		{body: req.body.bodyStr},
-		{votes: 0},
-		{date: Date.now},
-		{user: req.session.user});
+		{title: req.body.titleStr,
+		body: req.body.bodyStr,
+		votes: 0,
+		date: Date.now(),
+		user: req.session.user});
 	content.save(function(err){
         if(err){
-            return handleError(err);
+            res.send(err);
+            return console.log(err);
         } else {
             res.send('success');
         }
@@ -52,7 +53,10 @@ app.post('/posts', function(req,res){
 });
 // Display posts by date on the index page
 app.get('/posts',function(req,res){
-	post.find(function(err, data){
+	post.find({}, function(err, data){
+        if(err){
+            console.log(err);
+        }
 		res.send(data);
 	});
 });

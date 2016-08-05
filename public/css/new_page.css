@@ -25,7 +25,13 @@ body{
 	/*border-right: 2px solid black;*/
 
 }
-.nav .navbar-nav .navbar-right>ul>li>a{
+.navbar-default .nav-brand{
+    color: #333;
+}
+.navbar-default .navbar-nav>li>a:hover {
+    color: black;
+}
+.navbar-default .navbar-nav>li>a{
 	color: #333;
 }
 .titletab{
@@ -62,7 +68,6 @@ body{
 }
 .wysiwyg{
 	opacity: 0.9;
-
 }
 #submitbtn{
 
