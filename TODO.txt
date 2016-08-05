@@ -8,21 +8,20 @@ DONE setup registration
 DONE set up the server and make sure the basics are still responsive
 DONE new post javascript to set title str & body str to the matching fields
 
------ ALL -----
-get everything interconnected (hrefs working)
-
 ----- index.html -----
 get a dummy post to show
-    the title and the output
+    titles and the output
+get dummy votes to work (click and display result)
 setup a report button
-setup database for persistent storage
-get dummy votes to work
 logout button
 
 ----- new_post.html -----
 be able to put new posts in the database
+add link to ./index.html to the 'homebase' button
+add link to something to the 'codebase' button
 
 ----- backend -----
+setup database for persistent storage
 new_post.html
     don't allow access to new_post w/o login
 index.html

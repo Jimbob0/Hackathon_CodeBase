@@ -102,12 +102,12 @@ app.get('/logout', function(req,res){
 	res.redirect("/index.html");
 });
 
-app.get('/new_page(.html)?', function(req,res) {
+app.get('/new_post(.html)?', function(req,res) {
 	if (!req.session.user) {
 		res.redirect("/login");
 		return;
 	}
-	res.sendFile(__dirname + "/public/new_page.html");
+	res.sendFile(__dirname + "/public/new_post.html");
 });
 
 app.post('/register', function(req, res){
