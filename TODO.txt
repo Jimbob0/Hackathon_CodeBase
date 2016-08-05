@@ -10,6 +10,11 @@ DONE get a cute shark cursor
 DONE setup database for persistent storage
 DONE logout button
 DONE add link to ./index.html to the 'homebase' button
+DONE get title and body saved to database
+DONE get the post submittal working
+DONE be able to put new posts in the database
+DONE add link to /something/ to the 'codebase' button -- ./creators.html
+DONE like button image
 
 ---------- REQUIREMENTS ----------
 
@@ -19,15 +24,7 @@ get a dummy post to show
 get dummy votes to work (click and display result)
 setup a report button
 
------ new_post.html -----
-add link to /something/ to the 'codebase' button
-
 ----- backend -----
-new_post.html
-    get title and body saved to database
-    get the post submittal working
-        POST /posts
-    be able to put new posts in the database
 index.html
     get a real post to show
         GET /posts

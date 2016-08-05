@@ -53,11 +53,12 @@ app.post('/posts', function(req,res){
 });
 // Display posts by date on the index page
 app.get('/posts',function(req,res){
-	post.find({}, function(err, data){
+	post.find("posts/:title", function(err, data){
         if(err){
             console.log(err);
         }
-		res.send(data);
+        res.send(JSON.stringify(sightings.filter(function(post){ return  post.title == req.params.title;
+        })));
 	});
 });
 
