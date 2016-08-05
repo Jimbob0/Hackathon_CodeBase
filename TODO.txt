@@ -26,9 +26,9 @@ add link to /something/ to the 'codebase' button
 ----- backend -----
 new_post.html
     get title and body saved to database
-index.html
     get the post submittal working
         POST /posts
+index.html
     get a real post to show
         GET /posts
     get real votes to work
