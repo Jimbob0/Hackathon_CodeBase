@@ -76,7 +76,7 @@ app.get('/posts',function(req,res){
 
 // if we want to respond to GET requests for "/"
 app.get("/", function(req, res) {
-	res.sendFile(__dirname + "/index.html");
+	res.sendFile(__dirname + "/public/index.html");
 });
 
 // if we want to respond to POST requests for "/api"

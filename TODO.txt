@@ -1,24 +1,37 @@
 ---------- REQUIREMENTS ----------
+
+----- DONE -----
 DONE restyle the login page-header to be a navbar
 DONE get the other pages completed
 DONE get the users working
 DONE setup registration
-done get everything interconnected (hrefs working)
 DONE set up the server and make sure the basics are still responsive
+DONE new post javascript to set title str & body str to the matching fields
+
+----- ALL -----
+get everything interconnected (hrefs working)
+
+----- index.html -----
 get a dummy post to show
     the title and the output
-get the post submittal working
-    POST /posts
-get a real post to show
-    GET /posts
-get dummy votes to work
-get real votes to work
-    GET /votes
 setup a report button
 setup database for persistent storage
-CREATE NEW PAGE
-DONE new post javascript to set title str & body str to the matching fields
+get dummy votes to work
+logout button
+
+----- new_post.html -----
 be able to put new posts in the database
+
+----- backend -----
+new_post.html
+    don't allow access to new_post w/o login
+index.html
+    get the post submittal working
+        POST /posts
+    get a real post to show
+        GET /posts
+    get real votes to work
+        GET /votes
 
 ---------- EXTRAS ----------
 DONE get a cute shark cursor
