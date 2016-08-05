@@ -1,35 +1,18 @@
-
-// $ npm init
-
-// $ npm install --save express
-
+// include external modules
 var express = require("express");
-
+var bodyParser = require("body-parser");
+var session = require('express-session');
+var mongoose = require("mongoose");
+var UserFtns = require("./UserFtns.js");
+var Schema = mongoose.Schema;
 var app = express();
 
 var PORT = process.env.port || 8000;
 
-// if we want to handle post requests
-
-// $ npm install --save body-parser
-
-var bodyParser = require("body-parser");
-
-var session = require('express-session');
-
-var mongoose = require("mongoose");
-
 mongoose.connect('mongodb://localhost');
-
-var UserFtns = require("./UserFtns.js");
-var Schema = mongoose.Schema;
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-
-// if we want to handle session (login, etc)
-
-// $ npm install --save express-session
 
 app.use(session({
 	secret: "Secret Key",
