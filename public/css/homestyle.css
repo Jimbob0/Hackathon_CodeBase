@@ -107,6 +107,18 @@ body {
 	padding-bottom: 0;
 
 }
+
+#far {
+	float: right;
+	background-image: url(../img/underwater-header.jpg);
+}
+#likevalue {
+	border: 1px solid black;
+	width: 25px;
+	text-align: center;
+	height: 25px;
+}
+
 /* Start http://www.cursors-4u.com */ body, a:hover {cursor: url(http://cur.cursors-4u.net/nature/nat-7/nat630.cur), progress !important;} /* End http://www.cursors-4u.com */
 
 

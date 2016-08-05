@@ -8,6 +8,8 @@ DONE new post javascript to set title str & body str to the matching fields
 DONE don't allow access to new_post w/o login
 DONE get a cute shark cursor
 DONE setup database for persistent storage
+DONE logout button
+DONE add link to ./index.html to the 'homebase' button
 
 ---------- REQUIREMENTS ----------
 
@@ -16,19 +18,17 @@ get a dummy post to show
     titles and the output
 get dummy votes to work (click and display result)
 setup a report button
-logout button
 
 ----- new_post.html -----
-be able to put new posts in the database
-add link to ./index.html to the 'homebase' button
 add link to /something/ to the 'codebase' button
 
 ----- backend -----
 new_post.html
     get title and body saved to database
-index.html
     get the post submittal working
         POST /posts
+    be able to put new posts in the database
+index.html
     get a real post to show
         GET /posts
     get real votes to work

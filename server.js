@@ -46,7 +46,7 @@ app.post('/posts', function(req,res){
         if(err){
             return handleError(err);
         } else {
-            res.send('Post Uploaded');
+            res.send('success');
         }
     });
 });

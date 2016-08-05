@@ -2,53 +2,59 @@
 <html>
 <head>
 	<title>CodeBase Home Page</title>
+
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	
 	<link rel="stylesheet" type="text/css" href="./css/homestyle.css">
 
-	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-
 	<script>
 		//show all of the titles and votes for each post, mockup without db implementation NEEDS UPDATE
-		function showPosts(){
-			$.get("/posts",function(data){
-				$('#post_list').html("");
-				for(var i = 0; i < data.length; i++){
-					$('#post_list').append("<li class='list-group-item'><a id='title"+ data._id +"'>"+data.title+'</a><button class="check" id="post+'data._id'">Like'+data.votes+'</button></li>');
-				}
-			});
-		};
-		//show the answer of the selected title 
-		function showAns(id){
-			$.get("/posts",function(data){
-				var answer = data.find(
-					{_id: id}, 
-					{body: 1},
-					function(err, data){
-						if (err){
-	 						return handleError(err);
-						};
-						return (data);
-	 				}
-				);
-				$('#ans').html(answer); 
-			});
-		};
+		// function showPosts(){
+		// 	$.get("/posts",function(data){
+		// 		$('#post_list').html("");
+		// 		for(var i = 0; i < data.length; i++){
+		// 			$('#post_list').append("<li class='list-group-item'><a id='title"+ data._id +"'>"+data.title+"</a><button class='check' id='post" +data._id+"'>Like"+data.votes+"</button></li>");
+		// 		}
+		// 	});
+		// };
+		// //show the answer of the selected title 
+		// function showAns(id){
+		// 	$.get("/posts",function(data){
+		// 		var answer = data.find(
+		// 			{_id: id}, 
+		// 			{body: 1},
+		// 			function(err, data){
+		// 				if (err){
+	 // 						return handleError(err);
+		// 				};
+		// 				return (data);
+	 // 				}
+		// 		);
+		// 		$('#ans').html(answer); 
+		// 	});
+		// };
 
-		function upVote(id){ 
-			$.post("/posts", function(data){
-				data.findOneAndUpdate({_id: id}, {
-					$inc: {votes: 1}
-				});
-			})
-		}
+		// function upVote(id){ 
+		// 	$.post("/posts", function(data){
+		// 		data.findOneAndUpdate({_id: id}, {
+		// 			$inc: {votes: 1}
+		// 		});
+		// 	})
+		// }
 
+		function dummyPost (){
+			$("#sna").html("function myFunction(p1, p2) {return p1 * p2;}");
+		};
 		//mockup without db implementation NEEDS UPDATE
 		$(document).ready(function(){
 			showPosts();
 			$("#title"+id).click(showAns(id));
 			$("#post"+id).click(upVote(id));
 			$("#post"+id).click(showPosts);
+
+			$("#dummypost").click($("#sna").html("function myFunction(p1, p2) {return p1 * p2;}"));
 		});
 
 
@@ -77,10 +83,12 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
-
-
 	<div class="back">
+		<div>
+			<a href="/logout">
+				<button id="far"><a href="#">Logout</a></button>
+			</a>
+		</div>
 		<div class="title">
 			<p class="title">CodeBase</p>
 			<h4 class="titledesc">It's raining cats and codes!</h4>
@@ -89,28 +97,38 @@
 			<div class="col-md-8" id="posts">
 				<font color="white">Posts</font>
 				<ul class="list-group" id="post_list">
-	  				<li class="list-group-item">
-	  					<div class="check">Like</div>
+	  				<li class="list-group-item"><a id="dummypost">Fake Title</a>
+	  					<div class="check" id="report"><button>Report</button></div>
+	  					<div class="check" id="likevalue">#?</div>
+	  					<div class="check"><button>Like</button></div>
 	  				</li>
 	  				<li class="list-group-item">
-	  					<div class="check">Like</div>
+	  					<div class="check" id="report"><button>Report</button></div>
+	  					<div class="check" id="likevalue">#?</div>
+	  					<div class="check"><button>Like</button></div>
 	  				</li>
 	  				<li class="list-group-item">
-	  					<div class="check">Like</div>
+	  					<div class="check" id="report"><button>Report</button></div>
+	  					<div class="check" id="likevalue">#?</div>
+	  					<div class="check"><button>Like</button></div>
 	  				</li>
 	  				<li class="list-group-item">
-	  					<div class="check">Like</div>
+	  					<div class="check" id="report"><button>Report</button></div>
+	  					<div class="check" id="likevalue">#?</div>
+	  					<div class="check"><button>Like</button></div>
 	  				</li>
 	  				<li class="list-group-item">
-	  					<div class="check">Like</div>
+	  					<div class="check" id="report"><button>Report</button></div>
+	  					<div class="check" id="likevalue">#?</div>
+	  					<div class="check"><button>Like</button></div>
 	  				</li>
 				</ul>
 			</div>
 		<div id="contain">
-			<div class="col-md-4" id="ans">Scrolling Answer
-				<div>
+				<div class="col-md-4" id="ans">
+					<div id ="sna">Scrolling Answer
+					</div>
 				</div>
-			</div>
 		</div>
 	</div>
 	<div>
