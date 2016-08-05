@@ -1,5 +1,3 @@
----------- REQUIREMENTS ----------
-
 ----- DONE -----
 DONE restyle the login page-header to be a navbar
 DONE get the other pages completed
@@ -7,6 +5,11 @@ DONE get the users working
 DONE setup registration
 DONE set up the server and make sure the basics are still responsive
 DONE new post javascript to set title str & body str to the matching fields
+DONE don't allow access to new_post w/o login
+DONE get a cute shark cursor
+DONE setup database for persistent storage
+
+---------- REQUIREMENTS ----------
 
 ----- index.html -----
 get a dummy post to show
@@ -18,12 +21,11 @@ logout button
 ----- new_post.html -----
 be able to put new posts in the database
 add link to ./index.html to the 'homebase' button
-add link to something to the 'codebase' button
+add link to /something/ to the 'codebase' button
 
 ----- backend -----
-setup database for persistent storage
 new_post.html
-    don't allow access to new_post w/o login
+    get title and body saved to database
 index.html
     get the post submittal working
         POST /posts
@@ -33,7 +35,6 @@ index.html
         GET /votes
 
 ---------- EXTRAS ----------
-DONE get a cute shark cursor
 setup on page load animations
 setup tags for easy finding
 setup a search engine
