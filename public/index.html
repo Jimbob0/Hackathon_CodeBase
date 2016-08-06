@@ -10,14 +10,15 @@
 	<link rel="stylesheet" type="text/css" href="./css/homestyle.css">
 
 	<script>
-		//show all of the titles and votes for each post, mockup without db implementation NEEDS UPDATE
+		//show all of the titles and votes for each post
 		function showPosts(){
             $('#post_list').html("<h1>Loading...</h1>");
 			$.get("/posts",function(data){
 				$('#post_list').html("");
 				for(var i = 0; i < data.length; i++){
                     console.log(data[i])
-					$('#post_list').append("<li class='list-group-item post_title' id='" +
+					$('#post_list').append(
+                        "<li class='list-group-item post_title' id='" +
                         data[i]._id +
                         "'><a id='title" + 
                         data[i]._id + 
@@ -39,12 +40,14 @@
 		//show the answer of the selected title 
 		function showAns(id){
 			$.get("/posts",function(data){
-				var answer = data.find(
-					{_id: id, 
-					body: 1},
+				var answer = data.find({
+                    _id: id, 
+					body: 1
+                },
 					function(err, data){
 						if (err){
-	 						return handleError(err);
+                            console.log(err);
+	 						return err;
 						}
 						return (data);
 	 				}
@@ -55,7 +58,8 @@
 
 		function upVote(id){ 
 			$.post("/posts", function(data){
-				data.findOneAndUpdate({_id: id}, {
+				data.findOneAndUpdate({
+                    _id: id, 
 					$inc: {votes: 1}
 				});
 			});
