@@ -2,6 +2,8 @@
 	font-family: 'penn';
 	src: url("../fonts/Pennstat.ttf");
 }
+
+/* BEGIN navbar styling */
 .water{
 	background-image: url(../img/underwater-header.jpg);
 	background-size: cover;
@@ -28,7 +30,9 @@
 .navbar-default .navbar-nav>li>a {
     color: #333;
 }
+/* END navbar styling */
 
+/* BEGIN title style */
 .title {
 	text-align: center;
 	width: 100%;
@@ -60,21 +64,31 @@
 }
 =======
 	font-family: Verdana;
+/* END title style */
 
+/* BEGIN main style */
 #posts {
 	padding-bottom: 300px;
 	border: 1px solid black;
 }
 
 #ans {
-	padding-bottom: 300px;
+	padding-bottom: 30px;
 	border: 1px solid black;
 	background-color: white;
 	padding-top: -30px;
 	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.5), 0 1px 1px rgba(255,255,255,0.5);
 	border-radius: 4px;
 	opacity: .9;
-    margin-top: 30px
+    margin-top: 30px;
+    height: 340px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.post-body {
+    overflow-y: scroll;
+    overflow: hidden;
+    height: 350px;
 }
 
 .col-md-4 {

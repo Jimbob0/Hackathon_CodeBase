@@ -16,6 +16,7 @@ DONE be able to put new posts in the database
 DONE add link to /something/ to the 'codebase' button -- ./creators.html
 DONE like button image
 DONE get a real post to show
+DONE setup a post loading animation
 
 ---------- REQUIREMENTS ----------
 

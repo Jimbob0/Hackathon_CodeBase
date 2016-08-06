@@ -7,8 +7,10 @@ var UserFtns = require("./UserFtns.js");
 var Schema = mongoose.Schema;
 var app = express();
 
+// set the port for use
 var PORT = process.env.port || 8000;
 
+// connect to the mongo DB
 mongoose.connect('mongodb://localhost');
 
 app.use(bodyParser.urlencoded({extended: false}));

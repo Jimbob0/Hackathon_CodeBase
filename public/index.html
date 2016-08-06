@@ -64,11 +64,15 @@
 		}
 
 		//mockup without db implementation NEEDS UPDATE
+        // wait until the whole document is loaded
 		$(document).ready(function(){
+            // call the loading animation
             loading();
+            // wait two seconds before showing the results
             setTimeout(function(){
                 showPosts();
-            },5000);
+            },2000);
+            // when a title is clicked, return the id of that title for use
             $(".post_title").click(function(){
                 var postId = $(this).attr("id");
                 console.log(postId)
@@ -129,7 +133,7 @@
 			</div>
 		<div id="contain">
 				<div class="col-md-4" id="ans">
-					<div id ="sna">Scrolling Answer
+					<div class='post_body'>Scrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/nScrolling Answer/n
 					</div>
 				</div>
 		</div>

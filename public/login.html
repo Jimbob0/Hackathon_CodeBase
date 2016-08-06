@@ -11,6 +11,7 @@
 	></script>
 
 	<script>
+    // check if the user exists and login if they do
 		function tryToLogin() {
 			$.post('/login',
 			{
@@ -25,6 +26,7 @@
 			});
 		}
 
+        // register new user
 		function tryToRegister() {
 			$.post('/register',
 			{
@@ -34,11 +36,12 @@
 				if (data === "success"){
 					document.location = "/index.html";
 				} else {
-					$('#error').html("INVALID USERNAME OR PASSWORD");
+					$('#error').html("YOU CAN'T DO THAT");
 				}
 			});
 		}
 
+        // on click run functions after the page is loaded
 		$(document).ready(function() {
 			$('#submit').click(tryToLogin);
 			$('#register').click(tryToRegister);
@@ -58,6 +61,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
+    <!-- BEGIN navbar -->
     <div class="navbar" id="page_header">
         <div class='head-left'>
             <div class='head-left-wrapper'>
@@ -76,7 +80,9 @@
             </a>
         </div>
     </div>
+    <!-- END navbar -->
 
+    <!-- BEGIN login area -->
     <div class='login'>
         <h1>Login</h1>
         <input type="text" id="username" placeholder="Username" required="required"></input>
@@ -85,5 +91,6 @@
         <input type="button" id="register" value="Register"></input>
     </div>
 	<div id="error"></div>
+    <!-- END login area -->
 </body>
 </html>

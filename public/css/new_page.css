@@ -9,6 +9,7 @@ body{
     font-family: 'penn';
     src: url("../fonts/Pennstat.ttf");
 }
+/* BEGIN navbar styling */
 .water{
 	background-image: url(../img/underwater-header.jpg);
 	background-size: cover;
@@ -34,6 +35,9 @@ body{
 .navbar-default .navbar-nav>li>a{
 	color: #333;
 }
+/* END navbar styling */
+
+/* BEGIN title */
 .titletab{
 	font-family: penn;
 	font-size: 20px;
@@ -51,6 +55,9 @@ body{
 	text-align: center;
 	color: #333;
 }
+/* END title */
+
+/* BEGIN input field styling */
 #sizing-addon1{
 	font-family:penn;
 	font-size: 15px;
@@ -66,6 +73,7 @@ body{
 	width: 500px;
 	opacity: 0.9;
 }
+/* BEGIN summernote styling */
 .wysiwyg{
 	opacity: 0.9;
 }
@@ -80,4 +88,5 @@ body{
 	opacity: 0.3;
     filter: alpha(opacity=30);
 }
-
+/* END summernote styling */
+/* END input field styling */
