@@ -18,12 +18,6 @@ DONE like button image
 
 ---------- REQUIREMENTS ----------
 
------ index.html -----
-get a dummy post to show
-    titles and the output
-get dummy votes to work (click and display result)
-setup a report button
-
 ----- backend -----
 index.html
     get a real post to show

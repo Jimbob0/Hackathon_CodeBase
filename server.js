@@ -37,7 +37,8 @@ var post = mongoose.model('post', postSchema);
 // Upload from the new_page inputs
 app.post('/posts', function(req,res){
 	var content = new post(
-		{title: req.body.titleStr,
+        { id: Number,
+        title: req.body.titleStr,
 		body: req.body.bodyStr,
 		votes: 0,
 		date: Date.now(),
@@ -57,8 +58,10 @@ app.get('/posts',function(req,res){
         if(err){
             console.log(err);
         }
-        res.send(JSON.stringify(sightings.filter(function(post){ return  post.title == req.params.title;
-        })));
+       //res.send(JSON.stringify(data.filter(function (id){
+         //   return id.title == req.params.title;
+           // })));
+        res.send(data);
 	});
 });
 

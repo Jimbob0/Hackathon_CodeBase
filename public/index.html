@@ -11,51 +11,65 @@
 
 	<script>
 		//show all of the titles and votes for each post, mockup without db implementation NEEDS UPDATE
-		// function showPosts(){
-		// 	$.get("/posts",function(data){
-		// 		$('#post_list').html("");
-		// 		for(var i = 0; i < data.length; i++){
-		// 			$('#post_list').append("<li class='list-group-item'><a id='title"+ data._id +"'>"+data.title+"</a><button class='check' id='post" +data._id+"'>Like"+data.votes+"</button></li>");
-		// 		}
-		// 	});
-		// };
-		// //show the answer of the selected title 
-		// function showAns(id){
-		// 	$.get("/posts",function(data){
-		// 		var answer = data.find(
-		// 			{_id: id}, 
-		// 			{body: 1},
-		// 			function(err, data){
-		// 				if (err){
-	 // 						return handleError(err);
-		// 				};
-		// 				return (data);
-	 // 				}
-		// 		);
-		// 		$('#ans').html(answer); 
-		// 	});
-		// };
+		function showPosts(){
+            $('#post_list').html("<h1>Loading...</h1>");
+			$.get("/posts",function(data){
+				$('#post_list').html("");
+				for(var i = 0; i < data.length; i++){
+                    console.log(data[i])
+					$('#post_list').append("<li class='list-group-item post_title' id='" +
+                        data[i]._id +
+                        "'><a id='title" + 
+                        data[i]._id + 
+                        "'>" + 
+                        data[i].title + 
+                        "</a><button class='check' id='report" + 
+                        data[i]._id + 
+                        "'><span class='glyphicon glyphicon-alert'></span></button></div><div class='check' id='likevalue" +
+                        data[i]._id + 
+                        "'>" + 
+                        data[i].votes +
+                        "</div><button class='check'><span class='glyphicon glyphicon-thumbs-up' id='vote" +
+                        data[i]._id + 
+                        "'></span></button></li>"
+                    );
+				}
+			});
+		}
+		//show the answer of the selected title 
+		function showAns(id){
+			$.get("/posts",function(data){
+				var answer = data.find(
+					{_id: id, 
+					body: 1},
+					function(err, data){
+						if (err){
+	 						return handleError(err);
+						}
+						return (data);
+	 				}
+				);
+				$('#ans').html(answer); 
+			});
+		}
 
-		// function upVote(id){ 
-		// 	$.post("/posts", function(data){
-		// 		data.findOneAndUpdate({_id: id}, {
-		// 			$inc: {votes: 1}
-		// 		});
-		// 	})
-		// }
+		function upVote(id){ 
+			$.post("/posts", function(data){
+				data.findOneAndUpdate({_id: id}, {
+					$inc: {votes: 1}
+				});
+			});
+		}
 
-		function dummyPost (){
-			$("#sna").html("function myFunction(p1, p2) {return p1 * p2;}");
-		};
 		//mockup without db implementation NEEDS UPDATE
 		$(document).ready(function(){
 			showPosts();
+            /* What does 'id' need to be changed to so that it connects with the id of a particular element
 			$("#title"+id).click(showAns(id));
 			$("#post"+id).click(upVote(id));
 			$("#post"+id).click(showPosts);
-
-			$("#dummypost").click($("#sna").html("function myFunction(p1, p2) {return p1 * p2;}"));
-		});
+            */
+        });
 
 
 	</script>
@@ -98,41 +112,6 @@
 				<font color="white">Posts</font>
 				<ul class="list-group" id="post_list">
 	  				<li class="list-group-item"><a id="dummypost">Fake Title</a>
-	  					<div class="check" id="report"><button>Report</button></div>
-	  					<div class="check" id="likevalue">#?</div>
-	  					<div class="check">
-	  						<a href="#">
-          						<span class="glyphicon glyphicon-thumbs-up"></span>
-        					</a>
-        				</div>
-	  				</li>
-	  				<li class="list-group-item">
-	  					<div class="check" id="report"><button>Report</button></div>
-	  					<div class="check" id="likevalue">#?</div>
-	  					<div class="check"><a href="#">
-          						<span class="glyphicon glyphicon-thumbs-up"></span>
-        					</a>
-        				</div>
-	  				</li>
-	  				<li class="list-group-item">
-	  					<div class="check" id="report"><button>Report</button></div>
-	  					<div class="check" id="likevalue">#?</div>
-	  					<div class="check">
-	  						<a href="#">
-          						<span class="glyphicon glyphicon-thumbs-up"></span>
-        					</a>
-        				</div>
-	  				</li>
-	  				<li class="list-group-item">
-	  					<div class="check" id="report"><button>Report</button></div>
-	  					<div class="check" id="likevalue">#?</div>
-	  					<div class="check">
-	  						<a href="#">
-          						<span class="glyphicon glyphicon-thumbs-up"></span>
-        					</a>
-        				</div>
-	  				</li>
-	  				<li class="list-group-item">
 	  					<div class="check" id="report"><button>Report</button></div>
 	  					<div class="check" id="likevalue">#?</div>
 	  					<div class="check">
