@@ -74,6 +74,7 @@
 	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.5), 0 1px 1px rgba(255,255,255,0.5);
 	border-radius: 4px;
 	opacity: .9;
+    margin-top: 30px
 }
 
 .col-md-4 {
@@ -129,4 +130,53 @@ body {
 
 /* Start http://www.cursors-4u.com */ body, a:hover {cursor: url(http://cur.cursors-4u.net/nature/nat-7/nat630.cur), progress !important;} /* End http://www.cursors-4u.com */
 
-
+/* loading animation */
+.load-wrapp{
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 0px 10px 10px 0px;
+    padding: 20px 20px 20px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: transparent;
+}
+.load-wrapp:last-child {
+    margin-right: 0;
+}
+.bubble-1, .bubble-2, .bubble-3{
+    position: absolute;
+    top: 0;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background-color: blue;
+}
+.bubble-2{
+    top: auto;
+    bottom: 0;
+}
+.bubble-3{
+    top: 12.5px;
+    bottom: 0;
+}
+.load-9 .spinner {
+    animation: loading 2s linear infinite;
+}
+.load-9 .bubble-1, .load-9 .bubble-2, .load-9 .bubble-3{
+    animation: bounce 2s ease-in-out infinite;
+}
+.load-9 .bubble-2{
+    animation-delay: -0.5s;
+}
+.load-9 .bubble-3{
+    animation-delay: -1.0s;
+}
+@keyframes loading {
+    100% {transform: rotate(360deg);}
+}
+@keyframes bounce {
+    0%, 100% {transform: scale(0.0);}
+    50% {transform: scale(1.0);}
+}
+/* end loading animation */

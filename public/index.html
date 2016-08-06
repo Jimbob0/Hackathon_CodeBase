@@ -10,29 +10,27 @@
 	<link rel="stylesheet" type="text/css" href="./css/homestyle.css">
 
 	<script>
+    function loading(){
+        $('#post_list').html("<div class='load-wrapp'><div class='load-9'><div class='spinner'><div class='bubble-1'></div><div class='bubble-2'></div><div class='bubble-3'></div></div></div></div>");
+    }
 		//show all of the titles and votes for each post
 		function showPosts(){
-            $('#post_list').html("<h1>Loading...</h1>");
+            // loading before the list is populated
+            // get the posts from the server
 			$.get("/posts",function(data){
+                // clear the div of anything before populating
 				$('#post_list').html("");
 				for(var i = 0; i < data.length; i++){
-                    console.log(data[i])
+                    // add these elements to the list while looping through the data from the server
+                    console.log(data[i]);
 					$('#post_list').append(
                         "<li class='list-group-item post_title' id='" +
                         data[i]._id +
-                        "'><a id='title" + 
-                        data[i]._id + 
-                        "'>" + 
+                        "'><a id='titleOfPost'>" + 
                         data[i].title + 
-                        "</a><button class='check' id='report" + 
-                        data[i]._id + 
-                        "'><span class='glyphicon glyphicon-alert'></span></button></div><div class='check' id='likevalue" +
-                        data[i]._id + 
-                        "'>" + 
+                        "</a><button class='check' id='report'><span class='glyphicon glyphicon-alert'></span></button></div><div class='check' id='likevalue'>" + 
                         data[i].votes +
-                        "</div><button class='check'><span class='glyphicon glyphicon-thumbs-up' id='vote" +
-                        data[i]._id + 
-                        "'></span></button></li>"
+                        "</div><button class='check'><span class='glyphicon glyphicon-thumbs-up' id='vote'></span></button></li>"
                     );
 				}
 			});
@@ -67,12 +65,15 @@
 
 		//mockup without db implementation NEEDS UPDATE
 		$(document).ready(function(){
-			showPosts();
-            /* What does 'id' need to be changed to so that it connects with the id of a particular element
-			$("#title"+id).click(showAns(id));
-			$("#post"+id).click(upVote(id));
-			$("#post"+id).click(showPosts);
-            */
+            loading();
+            setTimeout(function(){
+                showPosts();
+            },5000);
+            $(".post_title").click(function(){
+                var postId = $(this).attr("id");
+                console.log(postId)
+                alert(postId);
+            });
         });
 
 
@@ -114,8 +115,8 @@
 		<div class="container">
 			<div class="col-md-8" id="posts">
 				<font color="white">Posts</font>
-				<ul class="list-group" id="post_list">
-	  				<li class="list-group-item"><a id="dummypost">Fake Title</a>
+				<ul class="list-group post-list" id="post_list">
+<!--	  				<li class="list-group-item"><a id="dummypost">Fake Title</a>
 	  					<div class="check" id="report"><button>Report</button></div>
 	  					<div class="check" id="likevalue">#?</div>
 	  					<div class="check">
@@ -123,7 +124,7 @@
           						<span class="glyphicon glyphicon-thumbs-up"></span>
         					</a>
         				</div>
-	  				</li>
+                        </li> -->
 				</ul>
 			</div>
 		<div id="contain">
