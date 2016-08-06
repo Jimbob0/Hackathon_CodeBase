@@ -15,15 +15,18 @@ DONE get the post submittal working
 DONE be able to put new posts in the database
 DONE add link to /something/ to the 'codebase' button -- ./creators.html
 DONE like button image
+DONE get a real post to show
 
 ---------- REQUIREMENTS ----------
 
 ----- backend -----
 index.html
-    get a real post to show
-        GET /posts
-    get real votes to work
-        GET /votes
+    get the body of the post to display onclick of the title -- showAn()
+    get real votes to work -- upVote()
+    both the body and the vote need to have a way to connect the id of the post to the server. - this will have something to do with the '_id'. 
+    get the report button to do something -- makeReport()
+    
+    
 
 ---------- EXTRAS ----------
 setup on page load animations
@@ -35,3 +38,4 @@ setup an admin page
 report user function
 setup a user page
 setup a way to save posts to the user page
+setup a delete button (if logged in as user that created the post)
