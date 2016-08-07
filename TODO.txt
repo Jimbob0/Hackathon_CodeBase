@@ -18,7 +18,8 @@ DONE like button image
 DONE get a real post to show
 DONE setup a post loading animation
 DONE get the body of the post to display onclick of the title -- showAns()
-
+DONE setup on page load animations
+DONE background animations
 
 ---------- REQUIREMENTS ----------
 
@@ -30,13 +31,7 @@ index.html
     
 
 ---------- EXTRAS ----------
-setup on page load animations
-setup tags for easy finding
-setup a search engine
-setup an admin page
-    ability to delete reported posts
-    ability to remove reported users
-report user function
-setup a user page
-setup a way to save posts to the user page
-setup a delete button (if logged in as user that created the post)
+add backgroudn animations to the other pages
+implement the logo to all pages
+create the creators page
+

@@ -49,24 +49,12 @@
                     $('.post_body').html(result[0].body);
                 });
                 $('.vote').click(function(){
-                    $.post("/posts", {
-                        var postId = (this.id);
-                       // something about making this attach to the $.post on the server side... 
-
-                        );
+                    $.post("/posts/votes", {
+                        postId : (this.id),
                     });
                 });
-			});
+            });
 		}
-		function upVote(id){ 
-			$.post("/posts", function(data){
-				data.findOneAndUpdate({
-                    _id: id, 
-					$inc: {votes: 1}
-				});
-			});
-		}
-
         // wait until the whole document is loaded, display the loading animation and then display the posts
 		$(document).ready(function(){
             // call the loading animation
@@ -74,7 +62,7 @@
             // wait two seconds before showing the results
             setTimeout(function(){
                 showPosts();
-            },2000);
+            },0000);
         });
 
 	</script>

@@ -65,15 +65,14 @@ app.get('/posts',function(req,res){
 });
 
 // update votes 
-/*
-app.post("/posts", function(req, res) {
-    content.findOneAndUpdate({
-        {id : req.body._id},
-        {$inc : {votes: 1}},
-        {upsert : true}
-    });
+app.post("/posts/votes", function(req, res) {
+    console.log(req.body.postId);
+    post.findOneAndUpdate(
+        { _id : req.body.postId},
+        { $inc : {'votes' : 1}}
+    );
 });
-*/
+
 // if we want to respond to GET requests for "/"
 app.get("/", function(req, res) {
 	res.sendFile(__dirname + "/public/index.html");
