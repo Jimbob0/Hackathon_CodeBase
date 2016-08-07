@@ -28,41 +28,37 @@
                         data[i]._id +
                         "'>" +
                         data[i].title + 
-                        "</a><button class='check' id='report'><span class='glyphicon glyphicon-alert'></span></button></div><div class='check' id='likevalue'>" + 
+                        "</a><button class='report' id='report'><span class='glyphicon glyphicon-alert'></span></button></div><div class='votenumber' id='likevalue'>" + 
                         data[i].votes +
-                        "</div><button class='check'><span class='glyphicon glyphicon-thumbs-up' id='vote'></span></button></li>"
+                        "</div><button class='vote'><span class='glyphicon glyphicon-thumbs-up vote' id='" +
+                        data[i]._id +
+                        "'></span></button></li>"
                     );
 				}
                 // click listener for getting the id
                 $('.post_title').click(function(){
+                    // get the id from the classname
                     var postId = (this.id);
+                    // find which object has the id
                     var result = data.filter(function(obj){
                         var postBody = (obj._id == postId);
+                        // return that object
                         return postBody;
                     });
+                    // write the body of the object to the div
                     $('.post_body').html(result[0].body);
+                });
+                $('.vote').click(function(){
+                    $.post("/posts",function(data){
+                        var postId = (this.id);
+                        data.posts.update(
+                            { _id: postId },
+                            { $inc: { 'votes': 1 } }
+                        );
+                    });
                 });
 			});
 		}
-		//show the answer of the selected title 
-		function showAns(id){
-			$.get("/posts",function(data){
-				var answer = data.find({
-                    _id: id, 
-					body: 1
-                },
-					function(err, data){
-						if (err){
-                            console.log(err);
-	 						return err;
-						}
-						return (data);
-	 				}
-				);
-				$('#ans').html(answer); 
-			});
-		}
-
 		function upVote(id){ 
 			$.post("/posts", function(data){
 				data.findOneAndUpdate({
@@ -72,15 +68,14 @@
 			});
 		}
 
-		//mockup without db implementation NEEDS UPDATE
-        // wait until the whole document is loaded
+        // wait until the whole document is loaded, display the loading animation and then display the posts
 		$(document).ready(function(){
             // call the loading animation
             loading();
             // wait two seconds before showing the results
             setTimeout(function(){
                 showPosts();
-            },0000);
+            },2000);
         });
 
 	</script>
