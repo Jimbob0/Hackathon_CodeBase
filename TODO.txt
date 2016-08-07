@@ -17,14 +17,14 @@ DONE add link to /something/ to the 'codebase' button -- ./creators.html
 DONE like button image
 DONE get a real post to show
 DONE setup a post loading animation
+DONE get the body of the post to display onclick of the title -- showAns()
+
 
 ---------- REQUIREMENTS ----------
 
 ----- backend -----
 index.html
-    get the body of the post to display onclick of the title -- showAn()
     get real votes to work -- upVote()
-    both the body and the vote need to have a way to connect the id of the post to the server. - this will have something to do with the '_id'. 
     get the report button to do something -- makeReport()
     
     
