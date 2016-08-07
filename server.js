@@ -60,13 +60,20 @@ app.get('/posts',function(req,res){
         if(err){
             console.log(err);
         }
-       //res.send(JSON.stringify(data.filter(function (id){
-         //   return id.title == req.params.title;
-           // })));
         res.send(data);
 	});
 });
 
+// update votes 
+/*
+app.post("/posts", function(req, res) {
+    content.findOneAndUpdate({
+        {id : req.body._id},
+        {$inc : {votes: 1}},
+        {upsert : true}
+    });
+});
+*/
 // if we want to respond to GET requests for "/"
 app.get("/", function(req, res) {
 	res.sendFile(__dirname + "/public/index.html");

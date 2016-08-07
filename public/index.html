@@ -49,11 +49,10 @@
                     $('.post_body').html(result[0].body);
                 });
                 $('.vote').click(function(){
-                    $.post("/posts",function(data){
+                    $.post("/posts", {
                         var postId = (this.id);
-                        data.posts.update(
-                            { _id: postId },
-                            { $inc: { 'votes': 1 } }
+                       // something about making this attach to the $.post on the server side... 
+
                         );
                     });
                 });
