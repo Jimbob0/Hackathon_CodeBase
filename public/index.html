@@ -24,15 +24,19 @@
                     // add these elements to the list while looping through the data from the server
                     console.log(data[i]);
 					$('#post_list').append(
-                        "<li class='list-group-item post_title' id='" +
+                        "<li class='list-group-item'><a class='post_title' id='" +
                         data[i]._id +
-                        "'><a id='titleOfPost'>" + 
+                        "'>" +
                         data[i].title + 
                         "</a><button class='check' id='report'><span class='glyphicon glyphicon-alert'></span></button></div><div class='check' id='likevalue'>" + 
                         data[i].votes +
                         "</div><button class='check'><span class='glyphicon glyphicon-thumbs-up' id='vote'></span></button></li>"
                     );
 				}
+                // click listener for getting the id
+                $('.post_title').click(function(){
+                    console.log(this.id);
+                });
 			});
 		}
 		//show the answer of the selected title 
@@ -71,13 +75,7 @@
             // wait two seconds before showing the results
             setTimeout(function(){
                 showPosts();
-            },2000);
-            // when a title is clicked, return the id of that title for use
-            $(".post_title").click(function(){
-                var postId = $(this).attr("id");
-                console.log(postId)
-                alert(postId);
-            });
+            },0000);
         });
 
 
@@ -114,7 +112,7 @@
 		</div>
 		<div class="title">
 			<p class="title">CodeBase</p>
-			<h4 class="titledesc">It's raining cats and codes!</h4>
+			<h4 class="titledesc" id='click'>It's raining cats and codes!</h4>
 		</div>
 		<div class="container">
 			<div class="col-md-8" id="posts">
