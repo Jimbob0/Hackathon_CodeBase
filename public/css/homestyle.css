@@ -2,8 +2,17 @@
 	font-family: 'penn';
 	src: url("../fonts/Pennstat.ttf");
 }
+/* Start http://www.cursors-4u.com */ body, a:hover {cursor: url(http://cur.cursors-4u.net/nature/nat-7/nat630.cur), progress !important;} /* End http://www.cursors-4u.com */
 
 /* BEGIN navbar styling */
+
+body {
+	background-image: url(../img/submarinebase.jpeg);
+	background-size: cover;
+	background-repeat: no-repeat;
+    padding-bottom: 100px;
+}
+
 .water{
 	background-image: url(../img/underwater-header.jpg);
 	background-size: cover;
@@ -30,6 +39,16 @@
 .navbar-default .navbar-nav>li>a {
     color: #333;
 }
+
+.titletab {
+	text-align: center;
+	width: 100%;
+	font-family: penn;
+	/*margin-top: 0px;*/
+	/*padding: 20px;*/
+	border-left: 1px solid black;
+	color: black;
+}
 /* END navbar styling */
 
 /* BEGIN title style */
@@ -40,18 +59,8 @@
 	margin-top: 0px;
 	padding: 20px;
 	font-size: 100px;
-
 }
-.titletab {
-	text-align: center;
-	width: 100%;
-	font-family: penn;
-	/*margin-top: 0px;*/
-	/*padding: 20px;*/
-	border-left: 1px solid black;
-	color: black;
 
-}
 .titledesc {
 	text-align: center;
 	font-family: penn;
@@ -63,7 +72,6 @@
 <<<<<<< Updated upstream
 }
 =======
-	font-family: Verdana;
 /* END title style */
 
 /* BEGIN main style */
@@ -92,13 +100,6 @@
 
 .col-md-4 {
 	padding-top: 20px;
-}
-
-body {
-	background-image: url(../img/submarinebase.jpeg);
-	background-size: cover;
-	background-repeat: no-repeat;
-    padding-bottom: 100px;
 }
 
 .report, .vote, .votenumber {
