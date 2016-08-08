@@ -35,7 +35,7 @@ cursor: url(http://cur.cursors-4u.net/nature/nat-7/nat630.cur), progress !import
     height: 75px;
     width: 120px;
     float: right;
-    border-left: 1px solid rgba(0,0,0,0.2);
+    border-left: 1px solid black;
     padding: 10px;
     padding-top: 25px;
     background-size: cover;
@@ -43,12 +43,15 @@ cursor: url(http://cur.cursors-4u.net/nature/nat-7/nat630.cur), progress !import
     font-size: 15pt;
     color: #333;
 }
+.logo{
+    height: 75px;
+    width: 75px;
+}
 .head-left-wrapper{
     margin: auto 0;
 }
 .head-left{
-    margin-top: 5px;
-    padding-left: 10px;
+    border-right: 1px solid black;
     float: left;
     display: flex;
     align-items: center;

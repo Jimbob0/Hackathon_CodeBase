@@ -12,7 +12,17 @@ body {
 	background-repeat: no-repeat;
     padding-bottom: 100px;
 }
-
+.logocase{
+    padding: 0;
+}
+.logo{
+    width: 75px;
+    height: 75px;
+    margin-top: 0;
+}
+.navbar{
+    height: 75px;
+}
 .water{
 	background-image: url(../img/underwater-header.jpg);
 	background-size: cover;
@@ -27,6 +37,7 @@ body {
 	border-right: 1px solid black;
 	font-size: 30px;
 	color:#333;
+    height: 75px;
 }
 
 .navbar-default .navbar-brand {
@@ -48,6 +59,11 @@ body {
 	/*padding: 20px;*/
 	border-left: 1px solid black;
 	color: black;
+    height: 75px;
+    padding-top: 25px;
+}
+li>a.titletab{
+    padding-top: 30px;
 }
 /* END navbar styling */
 
