@@ -2,9 +2,8 @@
 	font-family: 'penn';
 	src: url("../fonts/Pennstat.ttf");
 }
-/* Start http://www.cursors-4u.com */ body, a:hover {cursor: url(http://cur.cursors-4u.net/nature/nat-7/nat630.cur), progress !important;} /* End http://www.cursors-4u.com */
+body, a:hover {cursor: url(http://cur.cursors-4u.net/nature/nat-7/nat630.cur), progress !important;}
 
-/* BEGIN navbar styling */
 
 body {
 	background-image: url(../img/submarinebase.jpeg);
@@ -12,18 +11,21 @@ body {
 	background-repeat: no-repeat;
     padding-bottom: 100px;
 }
-.logocase{
+
+/* BEGIN navbar styling */
+
+.logocase {
     padding: 0;
 }
-.logo{
+.logo {
     width: 75px;
     height: 75px;
     margin-top: 0;
 }
-.navbar{
+.navbar {
     height: 75px;
 }
-.water{
+.water {
 	background-image: url(../img/underwater-header.jpg);
 	background-size: cover;
 	font-size: 15pt;
@@ -62,10 +64,10 @@ body {
     height: 75px;
     padding-top: 25px;
 }
-li>a.titletab{
+li>a.titletab {
     padding-top: 30px;
 }
-.foot{
+.foot {
     height: 25px;
 }
 /* END navbar styling */

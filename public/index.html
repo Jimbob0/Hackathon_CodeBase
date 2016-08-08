@@ -2,20 +2,26 @@
 <html>
 <head>
 	<title>CodeBase Home Page</title>
-
+    
+    <!-- IMPORT JQuery -->
 	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script src="./js/jquery.confirm.min.js"></script>
+    
+    <!-- IMPORT bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-    
+    <!-- IMPORT bootstrap toggle switches -->
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 	
+    <!-- IMPORT external stylesheets -->
 	<link rel="stylesheet" type="text/css" href="./css/homestyle.css">
     <link rel='stylesheet' type='text/css' href='./css/bubbles.css'>
     <link rel='stylesheet' type='text/css' href='./css/subcat.css'>
 
 	<script>
+    // loading animation
     function loading(){
         $('#post_list').html("<div class='load-wrapp'><div class='load-9'><div class='spinner'><div class='bubble-1'></div><div class='bubble-2'></div><div class='bubble-3'></div></div></div></div>");
     }
@@ -59,6 +65,28 @@
                         postId : (this.id),
                     });
                 });
+                /*
+                 setTimeout(function(){
+                    $('#likevalue').load('/posts/:id/:votes');
+                 }, 500);
+                 */
+                 // report button confirmation
+                $('#report').confirm({
+                    confirmButton: "Yes I'm sure",
+                    cancelButton: "No, nevermind",
+                    title: 'Report?',
+                    content: 'Are you sure you want to report this post as inappropriate?',
+                    // these don't work yet...
+                    confirm: function(e){
+                        e.preventdefault();
+                        $.alert.open('Reported!');
+                    },
+                    cancel: function(e){
+                        e.preventdefault();
+                        $.alert.open('Okay, no report logged')
+                    }
+                });
+
             });
 		}
         // wait until the whole document is loaded, display the loading animation and then display the posts
@@ -69,6 +97,13 @@
             setTimeout(function(){
                 showPosts();
             },0000);
+
+            // logout doesn't work yet
+            $('#far').click(function(){
+                $.get('/logout')
+            });
+
+
         });
 
 	</script>
@@ -95,39 +130,36 @@
     </div>
     <!-- END bubbles -->
 
-    <div id=subcat></div>
+    <div id=subcat></div> <!-- SUBMARINE KTTEH!!1! -->
     
     <!-- BEGIN navbar -->
 	<nav class="navbar navbar-default water" id="water" style="margin-bottom: 0px">
-  		<div class="container-fluid">
-    	<!-- Brand and toggle get grouped for better mobile display -->
-    	<div class="navbar-header">
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-	        <span class="sr-only">Toggle navigation</span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-          <a class="navbar-brand logocase" href="/creators.html"><img src='./img/logo_300x300.png' class='logo'></img></a>
-	    </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="./index.html" class="titletab">Home</a></li>
-        <li><a href="./login.html" class="titletab">Login</a></li>
-        <li><a href="./new_post.html" class="titletab">New Post</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+        <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand logocase" href="/creators.html"><img src='./img/logo_300x300.png' class='logo'></img></a> <!-- Logo -->
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="./index.html" class="titletab">Home</a></li>
+                <li><a href="./login.html" class="titletab">Login</a></li>
+                <li><a href="./new_post.html" class="titletab">New Post</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
 </nav>
 	<div class="back">
 		<div>
-			<a href="/logout">
-				<button id="far"><a href="#">Logout</a></button>
-			</a>
-
+            <button id="far"><a href="/logout">Logout</a></button>
 		</div>
 
+        <!-- BEGIN toggles for animation -->
         <div class="toggle-switches">
             <div class="checkbox">
                 <label class="checkbox-inline">
@@ -140,33 +172,37 @@
                 </label>
             </div>
         </div> 
+        <!-- END toggles for animation -->
 
+        <!-- BEGIN title -->
 		<div class="title">
 			<p class="title">CodeBase</p>
 			<h4 class="titledesc" id='click'>It's raining cats and codes!</h4>
 		</div>
+        <!-- END title -->
+
 		<div class="container">
+        <!-- BEGIN titles of posts -->
 			<div class="col-md-8" id="posts">
 				<font color="white">Posts</font>
 				<ul class="list-group post-list" id="post_list">
-<!--	  				<li class="list-group-item"><a id="dummypost">Fake Title</a>
-	  					<div class="check" id="report"><button>Report</button></div>
-	  					<div class="check" id="likevalue">#?</div>
-	  					<div class="check">
-	  						<a href="#">
-          						<span class="glyphicon glyphicon-thumbs-up"></span>
-        					</a>
-        				</div>
-                        </li> -->
+                    <!-- List items will be created from DB -->
 				</ul>
 			</div>
-		<div id="contain">
-				<div class="col-md-4" id="ans">
-					<div class='post_body'>
-					</div>
-				</div>
-		</div>
-	</div>
+        <!-- END titles of posts -->
+
+        <!-- BEGIN body of posts -->
+            <div id="contain">
+                <div class="col-md-4" id="ans">
+                    <div class='post_body'>
+                    </div>
+                </div>
+            </div>
+        <!-- END body of posts -->
+
+        </div>
+        
+        <!-- BEGIN footer navbar -->
 	<div>
 		<a href="./creators.html"><button class="navbar navbar-default foot">
 		<!-- This is the footer about the CodeBase creators. -->
@@ -174,8 +210,12 @@
 			</button>
 		</a>
     </div>
+    <!-- END footer navbar -->
+
 </body>
-<script src='./js/subcat.js'></script>
+<script src='./js/subcat.js'></script> <!-- submarine kitty animations -->
+
+<!-- Toggle switch functions -->
 <script>
 $(document).ready(function(){
     $('#kittyToggle').change(function(){

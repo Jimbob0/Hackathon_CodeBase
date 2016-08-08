@@ -22,15 +22,14 @@ DONE setup on page load animations
 DONE background animations
 DONE implement the logo to all pages
 DONE add background animations to the other pages
+DONE toggle buttons for the animations
+DONE get the report button to do something -- makeReport()
 
 ---------- REQUIREMENTS ----------
 
 ----- backend -----
 index.html
     get real votes to work -- upVote()
-    get the report button to do something -- makeReport()
-    
-    
 
 ---------- EXTRAS ----------
 finish the creators page
