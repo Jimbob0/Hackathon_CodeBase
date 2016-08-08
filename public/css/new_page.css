@@ -3,7 +3,7 @@ body{
 	background-image: url("../img/new_page_bg.jpg");
 	background-size: 100%;
 	background-repeat: no-repeat;
-    height: 800px;
+    height: 900px;
 }
 @font-face{
     font-family: 'penn';
@@ -18,17 +18,13 @@ body{
 	/*padding-top: 25px;*/
 	border: 0;
 	box-shadow: 0 0 30px blue;
-    height: 75px;
 }
 
 .navbar-brand{
-    height: 75px;
-    padding: 0;
-}
-.logo{
-    height: 75px;
-    width: 75px;
-	border-right: 2px solid black;
+	font-family: penn;
+	font-size: 20px;
+	/*border-right: 2px solid black;*/
+
 }
 .navbar-default .nav-brand{
     color: #333;
@@ -39,19 +35,15 @@ body{
 .navbar-default .navbar-nav>li>a{
 	color: #333;
 }
+/* END navbar styling */
+
+/* BEGIN title */
 .titletab{
 	font-family: penn;
 	font-size: 20px;
 	border-left: 2px solid black;
 	color: #333;
-    height: 75px;
 }
-li>a.titletab{
-    padding-top: 28px;
-}
-/* END navbar styling */
-
-/* BEGIN title */
 .title-input{
 	opacity: 0.9;
 }
@@ -67,7 +59,8 @@ li>a.titletab{
 
 /* BEGIN input field styling */
 #sizing-addon1{
-	background-image: url(../img/logo_300x300.png);
+	font-family:penn;
+	font-size: 15px;
 }
 
 #code-input{
