@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            height: 100vh;
+        }
+        #subcat{
+            width: 200px;
+            height: 150px;
+            background-image: url('./public/img/cat_submarine.png');
+            background-size: 100% 100%;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="subcat"></div>
+    <script>
+
+    var catDirx = 5;
+
+    var subcat = document.getElementById('subcat');
+    var cat_model = {
+        x: -300,
+        y: 300,
+        vx: catDirx
+    }
+    var k = 0;
+    function flip(){
+        var j = document.getElementById('subcat');
+        k += 180;
+        j.style.transform = 'rotateY('+k+'deg)';
+        j.style.transititonDuration = '0.5s'
+    }
+    function moveCat(){
+        cat_model.x = cat_model.x + cat_model.vx;
+        if(cat_model.x > 1440 && cat_model.vx > 0){
+            cat_model.vx *= -1;
+            flip();
+        }
+        if(cat_model.x < 0 && cat_model.vx < 0){
+            cat_model.vx *= -1;
+            flip();
+        }
+    }
+    function draw(){
+        subcat.style.top = cat_model.y + "px";
+        subcat.style.left = cat_model.x + "px";
+    }
+    function loop() {
+        moveCat()
+        draw()
+    }
+    setInterval(loop, 1000/30);
+
+    </script>
+
+</body>
+</html>

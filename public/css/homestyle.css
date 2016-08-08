@@ -65,6 +65,9 @@ body {
 li>a.titletab{
     padding-top: 30px;
 }
+.foot{
+    height: 25px;
+}
 /* END navbar styling */
 
 /* BEGIN title style */
@@ -160,7 +163,6 @@ li>a.titletab{
     font-size: 25px;
 }
 
-/* Start http://www.cursors-4u.com */ body, a:hover {cursor: url(http://cur.cursors-4u.net/nature/nat-7/nat630.cur), progress !important;} /* End http://www.cursors-4u.com */
 
 /* loading animation */
 .load-wrapp{
