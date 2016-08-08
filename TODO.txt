@@ -20,6 +20,7 @@ DONE setup a post loading animation
 DONE get the body of the post to display onclick of the title -- showAns()
 DONE setup on page load animations
 DONE background animations
+DONE implement the logo to all pages
 
 ---------- REQUIREMENTS ----------
 
@@ -32,6 +33,5 @@ index.html
 
 ---------- EXTRAS ----------
 add background animations to the other pages
-implement the logo to all pages
 create the creators page
 
