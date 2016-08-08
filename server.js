@@ -44,13 +44,14 @@ app.post('/posts', function(req,res){
 		body: req.body.bodyStr,
 		votes: 0,
 		date: Date.now(),
-		user: req.session.user});
+        user: req.session.user
+        });
 	content.save(function(err){
         if(err){
             res.send(err);
             return console.log(err);
         } else {
-            res.send('success');
+            res.send('success')
         }
     });
 });
@@ -69,10 +70,23 @@ app.post("/posts/votes", function(req, res) {
     console.log(req.body.postId);
     post.findOneAndUpdate(
         { _id : req.body.postId},
-        { $inc : {'votes' : 1}}
+        { $inc : {'votes' : 1}}, function(err, vote){
+            if(err){
+                 return console.log(err)}
+            else {
+                return console.log(vote)}
+        }
     );
 });
-
+/*
+app.get("/posts", function(err, data){
+	post.find("posts/:id/:votes", function(){
+        res.send(JSON.stringify(posts.filter(function(vote){
+            return vote.postId == req.params.postId
+        })));
+	});
+})
+*/
 // if we want to respond to GET requests for "/"
 app.get("/", function(req, res) {
 	res.sendFile(__dirname + "/public/index.html");

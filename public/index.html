@@ -65,7 +65,12 @@
                         postId : (this.id),
                     });
                 });
-                // report button confirmation
+                /*
+                 setTimeout(function(){
+                    $('#likevalue').load('/posts/:id/:votes');
+                 }, 500);
+                 */
+                 // report button confirmation
                 $('#report').confirm({
                     confirmButton: "Yes I'm sure",
                     cancelButton: "No, nevermind",
@@ -81,6 +86,7 @@
                         $.alert.open('Okay, no report logged')
                     }
                 });
+
             });
 		}
         // wait until the whole document is loaded, display the loading animation and then display the posts
@@ -96,6 +102,7 @@
             $('#far').click(function(){
                 $.get('/logout')
             });
+
 
         });
 
