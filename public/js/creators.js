@@ -1,39 +1,72 @@
-var canvas = document.getElementById('bgCanvas');
-var ctx = canvas.getContext('2d');
-var particles = [];
-var particleCount = 300;
-
-for(var i=0; i<particleCount;i++)
-      particles.push(new particle());
-
-  function particle() {
-    this.x = Math.random() * canvas.width;
-    this.y = canvas.height + Math.random() * 300;
-    this.speed = 1 + Math.random();
-    this.radius = Math.random() * 3;
-    this.opacity = (Math.random() * 100) / 1000;
-  }
+  var eddie = document.getElementById('eddie');
+  var jim = document.getElementById('jim');
+  var henry = document.getElementById('henry');
+  var stephen = document.getElementById('stephen');
 
 
-  function loop() {
-    requestAnimationFrame(loop);
-    draw();
-  }
+  function head_model(id){
+      var headDirx;
+      var headDiry;
+      var choosePlace = [100,200,300,400,500,600];
+      this.x = choosePlace[Math.floor(Math.random() * choosePlace.length) - 1];
+      this.y = choosePlace[Math.floor(Math.random() * choosePlace.length) - 1];
+        if(Math.random() < 0.5){
+            headDirx = 5
+        } else {
+            headDirx = -5
+        }
+        if(Math.random() < 0.5){
+            headDiry = 5
+        } else {
+            headDiry = -5
+        }
 
-  function draw() {
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    
-    ctx.globalCompositeOperation = 'lighter';
-    for(var i=0; i<particles.length; i++) {
-        var p = particles[i];
-        ctx.beginPath();
-        ctx.fillStyle = 'rgba(255,255,255,' + p.opacity + ')';
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI*2, false);
-        ctx.fill();
-        p.y -= p.speed;
-        if(p.y <= -10)
-          particles[i] = new particle();
+      this.vx = headDirx;
+      this.vy = headDiry;  
+      this.element = document.getElementById(id);
+   };
+  
+
+  
+  var heads = [];
+  heads.push(eddie_model = new head_model('eddie'));
+  heads.push(jim_model = new head_model('jim'));
+  heads.push(henry_model = new head_model('henry'));
+  heads.push(stephen_model = new head_model('stephen'));
+
+  function update(){
+      for(var i = 0; i < heads.length; i++){
+          heads[i].x = heads[i].x + heads[i].vx;
+          heads[i].y = heads[i].y + heads[i].vy;
+
+            if(heads[i].y > 700 && heads[i].vy > 0) {
+                //flip the y direction on the bottom edge
+                heads[i].vy *= -1;
+            }
+            // colliding with top edge
+            if(heads[i].y < 0 && heads[i].vy < 0) {
+                heads[i].vy *= -1;
+            }
+            if(heads[i].x > 1440 && heads[i].vx > 0) {
+                //flip the y direction on the bottom edge
+                heads[i].vx *= -1;
+            }
+            // colliding with top edge
+            if(heads[i].x < 0 && heads[i].vx < 0) {
+                heads[i].vx *= -1;
+            }
       }
-  }
 
-  loop();
+  }
+    function drawHeads(){
+        for(var i = 0; i < heads.length; i++){
+            heads[i].element.style.top = heads[i].y + "px";
+            heads[i].element.style.left = heads[i].x + "px";
+        }
+    }
+    function doLoop(){
+        update();
+        drawHeads();
+    }
+  
+  setInterval(doLoop, 1000/30);

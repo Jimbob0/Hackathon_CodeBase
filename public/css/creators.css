@@ -23,7 +23,38 @@ h2 {
 h4 {
     font-size: 20pt;
 }
-
+#eddie{
+    height: 75px;
+    width: 75px;
+    background-image: url('../img/eddie_img.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+#jim{
+    height: 75px;
+    width: 75px;
+    background-image: url('../img/jimbobo_img.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+#henry{
+    height: 75px;
+    width: 75px;
+    background-image: url('../img/henry_img.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+#stephen{
+    height: 75px;
+    width: 75px;
+    background-image: url('../img/stephen_img.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+}
 i{
     position: absolute;
     width: 120px;
