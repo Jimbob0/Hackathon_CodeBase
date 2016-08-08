@@ -105,9 +105,9 @@ app.post('/login', function(req, res){
 	}
 });
 
-app.post('/logout', function(req,res){
+app.get('/logout', function(req,res){
 	req.session.user = "";
-	res.redirect("/index.html");
+	res.redirect("/public/login.html");
 });
 
 app.get('/new_post(.html)?', function(req,res) {

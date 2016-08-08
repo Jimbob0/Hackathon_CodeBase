@@ -27,8 +27,11 @@
         $(document).ready(function(){
             $('#bubbleToggle').change(function(){
                 $('#background-wrap').toggle();
-            })
-        })
+            });
+            $('#logout').click(function(){
+                $.get('/logout');
+            });
+        });
         </script>
 
 	</head>
@@ -69,6 +72,7 @@
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav navbar-right">
 	        <li><a href="./index.html" class="titletab">Homebase</a></li>
+            <li><a id="logout" href="/./login.html" class="titletab">Log Out</a></li>
           </ul>
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->

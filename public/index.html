@@ -67,7 +67,7 @@
                             postId : $(this).attr('data-id')
                     }, function (postData){
                         var voteId = (postData._id);
-                        $('#likevalue' + voteId).html(postData.votes + 1)
+                        $('#likevalue' + voteId).html(postData.votes + 1);
                     });
                 });
                  // report button confirmation
@@ -83,7 +83,7 @@
                     },
                     cancel: function(e){
                         e.preventDefault();
-                        $.alert.open('Okay, no report logged')
+                        $.alert.open('Okay, no report logged');
                     }
                 });
 
@@ -96,14 +96,12 @@
             // wait two seconds before showing the results
             setTimeout(function(){
                 showPosts();
-            },0000);
+            },2000);
 
             // logout doesn't work yet
-            $('#far').click(function(){
-                $.get('/logout')
+            $('#logout').click(function(){
+                $.get('/logout');
             });
-
-
         });
 
 	</script>
@@ -150,15 +148,12 @@
                 <li><a href="./index.html" class="titletab">Home</a></li>
                 <li><a href="./login.html" class="titletab">Login</a></li>
                 <li><a href="./new_post.html" class="titletab">New Post</a></li>
+                <li><a id="logout" href="/./login.html" class="titletab">Log Out</a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
 </nav>
 	<div class="back">
-		<div>
-            <button id="far"><a href="/logout">Logout</a></button>
-		</div>
-
         <!-- BEGIN toggles for animation -->
         <div class="toggle-switches">
             <div class="checkbox">
