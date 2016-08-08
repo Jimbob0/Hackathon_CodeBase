@@ -67,8 +67,7 @@ li>a.titletab{
 
 /* BEGIN input field styling */
 #sizing-addon1{
-	font-family:penn;
-	font-size: 15px;
+	background-image: url(../img/logo_300x300.png);
 }
 
 #code-input{
