@@ -4,8 +4,12 @@
 	<title>CodeBase Home Page</title>
 
 	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 	
 	<link rel="stylesheet" type="text/css" href="./css/homestyle.css">
     <link rel='stylesheet' type='text/css' href='./css/bubbles.css'>
@@ -91,6 +95,8 @@
     </div>
     <!-- END bubbles -->
 
+    <div id=subcat></div>
+    
     <!-- BEGIN navbar -->
 	<nav class="navbar navbar-default water" id="water" style="margin-bottom: 0px">
   		<div class="container-fluid">
@@ -119,7 +125,22 @@
 			<a href="/logout">
 				<button id="far"><a href="#">Logout</a></button>
 			</a>
+
 		</div>
+
+        <div class="toggle-switches">
+            <div class="checkbox">
+                <label class="checkbox-inline">
+                    <input type='checkbox' checked data-toggle="toggle" data-size='mini' id='bubbleToggle'>Bubbles
+                </label>
+            </div>
+            <div class="checkbox">
+                <label class="checkbox-inline">
+                    <input type='checkbox' checked data-toggle="toggle" data-size='mini' id='kittyToggle'>Kitty
+                </label>
+            </div>
+        </div> 
+
 		<div class="title">
 			<p class="title">CodeBase</p>
 			<h4 class="titledesc" id='click'>It's raining cats and codes!</h4>
@@ -152,9 +173,17 @@
 		<p>Learn more about the CodeBase creators!</p>
 			</button>
 		</a>
-	</div>
-	
-    <div id=subcat></div>
+    </div>
 </body>
 <script src='./js/subcat.js'></script>
+<script>
+$(document).ready(function(){
+    $('#kittyToggle').change(function(){
+        $('#subcat').toggle();
+    })        
+    $('#bubbleToggle').change(function(){
+        $('#background-wrap').toggle();
+    })
+});
+</script>
 </html>

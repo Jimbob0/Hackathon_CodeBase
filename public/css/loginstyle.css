@@ -59,6 +59,11 @@ cursor: url(http://cur.cursors-4u.net/nature/nat-7/nat630.cur), progress !import
 .head-left h1{
     margin: 15px 0;
 }
+/* END navbar/header */
+
+.toggle-switches{
+    margin-left: 10px;
+}
 
 /* BEGIN login area */
 .login{

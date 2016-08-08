@@ -144,7 +144,10 @@ li>a.titletab{
 	padding-bottom: 0;
 
 }
-
+.toggle-switches{
+    float: left;
+    margin-left: 10px;
+}
 #far {
 	float: right;
 	background-image: url(../img/underwater-header.jpg);
