@@ -24,32 +24,32 @@ h4 {
     font-size: 20pt;
 }
 #eddie{
-    height: 75px;
-    width: 75px;
+    height: 100px;
+    width: 100px;
     background-image: url('../img/eddie_img.png');
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
 }
 #jim{
-    height: 75px;
-    width: 75px;
+    height: 100px;
+    width: 100px;
     background-image: url('../img/jimbobo_img.png');
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
 }
 #henry{
-    height: 75px;
-    width: 75px;
+    height: 100px;
+    width: 100px;
     background-image: url('../img/henry_img.png');
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
 }
 #stephen{
-    height: 75px;
-    width: 75px;
+    height: 100px;
+    width: 100px;
     background-image: url('../img/stephen_img.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -63,7 +63,13 @@ i{
     -webkit-animation: 'screen'  infinite;
   animation: 'screen'  infinite;
 }
-
+.head {
+    animation: 3s rotateRight infinite linear;
+}
+@keyframes rotateRight {
+    0%{transform:rotate(0deg); transform-origin: 50% 50%;}
+    100%{transform:rotate(360deg);}
+}
 
 i:nth-child(1){
     top:20px;
