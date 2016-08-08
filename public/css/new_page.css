@@ -35,7 +35,10 @@ body{
 	color: #333;
 }
 /* END navbar styling */
-
+.logo {
+    height: 75px;
+    width: 75px;
+}
 /* BEGIN title */
 .titletab{
 	font-family: penn;

@@ -47,7 +47,7 @@ app.post('/posts', function(req,res){
         user: req.session.user
         });
 	content.save(function(err){
-        if(err){
+       if(err){
             res.send(err);
             return console.log(err);
         } else {
@@ -72,9 +72,11 @@ app.post("/posts/votes", function(req, res) {
         { _id : req.body.postId},
         { $inc : {'votes' : 1}}, function(err, vote){
             if(err){
-                 return console.log(err)}
+                return console.log(err)
+            }
             else {
-                return console.log(vote)}
+                return console.log(vote)
+            }
         }
     );
 });
