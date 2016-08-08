@@ -19,7 +19,7 @@
             cat_model.vx *= -1;
             flip();
         }
-        if(cat_model.x < 0 && cat_model.vx < 0){
+        if(cat_model.x < -150 && cat_model.vx < 0){
             cat_model.vx *= -1;
             flip();
         }

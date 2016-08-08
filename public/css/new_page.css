@@ -44,6 +44,16 @@ body{
 	border-left: 2px solid black;
 	color: #333;
 }
+<<<<<<< HEAD
+=======
+/* END navbar styling */
+
+.toggle-switches {
+    float: left;
+    margin-left: 10px;
+}
+/* BEGIN title */
+>>>>>>> origin/master
 .title-input{
 	opacity: 0.9;
 }
