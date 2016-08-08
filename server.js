@@ -72,23 +72,16 @@ app.post("/posts/votes", function(req, res) {
         { _id : req.body.postId},
         { $inc : {'votes' : 1}}, function(err, vote){
             if(err){
-                return console.log(err)
+                res.status(500);
+                res.send(err)
             }
             else {
-                return console.log(vote)
+                res.send(vote)
             }
         }
     );
 });
-/*
-app.get("/posts", function(err, data){
-	post.find("posts/:id/:votes", function(){
-        res.send(JSON.stringify(posts.filter(function(vote){
-            return vote.postId == req.params.postId
-        })));
-	});
-})
-*/
+
 // if we want to respond to GET requests for "/"
 app.get("/", function(req, res) {
 	res.sendFile(__dirname + "/public/index.html");

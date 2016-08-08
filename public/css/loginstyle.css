@@ -73,16 +73,16 @@ cursor: url(http://cur.cursors-4u.net/nature/nat-7/nat630.cur), progress !import
 /* BEGIN login area */
 .login{
     position: relative;
-    top: 40%;
+    top: 20%;
     left: 50%;
     margin: -150px 0 0 -150px;
     width: 300px;
-    height: 300px;
+    height: 100px;
 }
 .login h1 {
     font-family: title;
-    text-shadow: 2px 1px 1px #0099ff, -2px -1px 1px blue;
-    color: #ffcc00;
+    text-shadow: -2px -1px 1px blue;
+    color: #FF7700;
     text-align: center;
     font-size: 34pt;
     letter-spacing: 1px;

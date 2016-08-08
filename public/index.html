@@ -40,11 +40,13 @@
                         data[i]._id +
                         "'>" +
                         data[i].title + 
-                        "</a><button class='report' id='report'><span class='glyphicon glyphicon-alert'></span></button></div><div class='votenumber' id='likevalue'>" + 
-                        data[i].votes +
-                        "</div><button class='vote'><span class='glyphicon glyphicon-thumbs-up vote' id='" +
+                        "</a><button class='report' id='report'><span class='glyphicon glyphicon-alert'></span></button></div><div class='votenumber' id='likevalue" + 
                         data[i]._id +
-                        "'></span></button></li>"
+                        "'>" + 
+                        data[i].votes +
+                        "</div><button class='vote' data-id='" + 
+                        data[i]._id + 
+                        "'><span class='glyphicon glyphicon-thumbs-up'></span></button></li>"
                     );
 				}
                 // click listener for getting the id
@@ -60,16 +62,14 @@
                     // write the body of the object to the div
                     $('.post_body').html(result[0].body);
                 });
-                $('.vote').click(function(){
-                    $.post("/posts/votes", {
-                        postId : (this.id),
+                $('.vote').click(function(evt){
+                        $.post("/posts/votes", {
+                            postId : $(this).attr('data-id')
+                    }, function (postData){
+                        var voteId = (postData._id);
+                        $('#likevalue' + voteId).html(postData.votes + 1)
                     });
                 });
-                /*
-                 setTimeout(function(){
-                    $('#likevalue').load('/posts/:id/:votes');
-                 }, 500);
-                 */
                  // report button confirmation
                 $('#report').confirm({
                     confirmButton: "Yes I'm sure",
@@ -78,11 +78,11 @@
                     content: 'Are you sure you want to report this post as inappropriate?',
                     // these don't work yet...
                     confirm: function(e){
-                        e.preventdefault();
+                        e.preventDefault();
                         $.alert.open('Reported!');
                     },
                     cancel: function(e){
-                        e.preventdefault();
+                        e.preventDefault();
                         $.alert.open('Okay, no report logged')
                     }
                 });

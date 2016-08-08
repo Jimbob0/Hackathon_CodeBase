@@ -154,7 +154,7 @@ li>a.titletab {
 	float: right;
 	background-image: url(../img/underwater-header.jpg);
 }
-#likevalue {
+.votenumber {
 	border: 1px solid black;
 	width: 25px;
     padding-top: 9px;
