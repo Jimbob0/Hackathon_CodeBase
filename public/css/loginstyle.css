@@ -2,6 +2,8 @@
     font-family: 'title';
     src: url("../fonts/Pennstat.ttf")
 }
+
+/* BEGIN body */
 body{
     height: 100vh;
     margin: 0;
@@ -24,6 +26,9 @@ cursor: url(http://cur.cursors-4u.net/nature/nat-7/nat630.cur), progress !import
     background-repeat: no-repeat;
     border-bottom: 0;
 }
+/* END body */
+
+/* BEGIN navbar */
 #page_header{
     margin-bottom: 0;
     box-shadow: 0 0 30px blue;
