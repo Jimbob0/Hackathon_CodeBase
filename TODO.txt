@@ -24,13 +24,7 @@ DONE implement the logo to all pages
 DONE add background animations to the other pages
 DONE toggle buttons for the animations
 DONE get the report button to do something -- makeReport()
-
+DONE get real votes to work -- upVote()
+DONE finish the creators page
 ---------- REQUIREMENTS ----------
-
------ backend -----
-index.html
-    get real votes to work -- upVote()
-
 ---------- EXTRAS ----------
-finish the creators page
-
